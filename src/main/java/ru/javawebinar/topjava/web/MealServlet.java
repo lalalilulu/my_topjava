@@ -46,7 +46,7 @@ public class MealServlet extends HttpServlet {
         String action = request.getParameter("action");
         if (action == null) {
             log.info("getAll");
-            request.setAttribute("mealList", MealsUtil.getWithExceeded(repository.getAll(), 2000));
+            request.setAttribute("mealList", MealsUtil.getWithExceeded(repository.getAll()));
             request.getRequestDispatcher("/mealList.jsp").forward(request, response);
         } else if (action.equals("delete"))  {
            int id = getId(request);
