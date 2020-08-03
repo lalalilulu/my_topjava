@@ -5,8 +5,10 @@ import java.util.Collection;
 
 public interface MealRepository {
 
-    Meal save(Meal meal);
-    void delete(int id);
-    Meal get(int id);
-    Collection<Meal> getAll();
+    Meal save(Meal meal, int userId);
+    boolean delete(int id, int userId);
+    Meal get(int id, int userId);
+
+    // Ordered dateTime desc
+    Collection<Meal> getAll(int userId);
 }

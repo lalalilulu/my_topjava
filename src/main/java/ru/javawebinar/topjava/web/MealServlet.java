@@ -3,7 +3,7 @@ package ru.javawebinar.topjava.web;
 import org.slf4j.Logger;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
-import ru.javawebinar.topjava.repository.inmemory.MealRepositoryInMemory;
+import ru.javawebinar.topjava.repository.inmemory.InMemoryMealRepository;
 import ru.javawebinar.topjava.util.MealsUtil;
 
 import javax.servlet.ServletConfig;
@@ -24,7 +24,7 @@ public class MealServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        repository = new MealRepositoryInMemory();
+        repository = new InMemoryMealRepository();
     }
 
     @Override
